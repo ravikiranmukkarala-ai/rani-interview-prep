@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color: #151515;
+  }
+
+  body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom subtle animations and utilities */
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: pulseSubtle 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: pulseSubtle 5s ease-in-out 2.5s infinite;
+}
+
+/* Pill badge style matching reference screenshot */
+.badge-pill {
+  @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f8fb;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4c5fb;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a47bf7;
+}
